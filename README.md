@@ -10,6 +10,101 @@ A sophisticated multi-agent AI system powered by [crewAI](https://crewai.com), f
 - **Secure Configuration** - Environment variable support for sensitive credentials
 - **PostgreSQL Backend** - Robust database storage for MLflow tracking server
 
+## 📦 Project Structure
+
+``````mermaid
+graph TB
+    User((External User))
+
+    subgraph "TaskMaster System"
+        subgraph "Core Services"
+            CrewAI["CrewAI Service<br>Python CrewAI"]
+            MLflow["MLflow Server<br>MLflow"]
+            TaskMaster["TaskMaster Crew<br>Python"]
+
+            subgraph "Agent Components"
+                TaskMasterAgent["Task Master Agent<br>LLM Agent"]
+                ResearchAgent["Research Agent<br>LLM Agent"]
+                WriterAgent["Writer Agent<br>LLM Agent"]
+                DocumentorAgent["Documentor Agent<br>LLM Agent"]
+                FactCheckerAgent["Fact Checker Agent<br>LLM Agent"]
+                SynthesisAgent["Synthesis Agent<br>LLM Agent"]
+            end
+
+            subgraph "Task Management"
+                TaskRouter["Task Router<br>Python"]
+                WorkflowManager["Workflow Manager<br>Python"]
+                TaskExecutor["Task Executor<br>Python"]
+            end
+
+            subgraph "Monitoring Components"
+                MetricsCollector["Metrics Collector<br>MLflow"]
+                PerformanceTracker["Performance Tracker<br>MLflow"]
+                ExperimentTracker["Experiment Tracker<br>MLflow"]
+            end
+        end
+
+        subgraph "Data Storage"
+            PostgresDB[("MLflow Database<br>PostgreSQL")]
+            ArtifactStore["Artifact Storage<br>Local FileSystem"]
+            KnowledgeBase["Knowledge Base<br>YAML/JSON"]
+        end
+
+        subgraph "Configuration Management"
+            AgentConfig["Agent Configuration<br>YAML"]
+            TaskConfig["Task Configuration<br>YAML"]
+            MLflowConfig["MLflow Configuration<br>YAML"]
+        end
+    end
+
+    %% Relationships
+    User -->|"Submits Request"| TaskMaster
+
+    %% Core Service Relationships
+    TaskMaster -->|"Creates"| CrewAI
+    TaskMaster -->|"Monitors"| MLflow
+    CrewAI -->|"Manages"| TaskMasterAgent
+
+    %% Agent Relationships
+    TaskMasterAgent -->|"Delegates to"| ResearchAgent
+    TaskMasterAgent -->|"Delegates to"| WriterAgent
+    TaskMasterAgent -->|"Delegates to"| DocumentorAgent
+    TaskMasterAgent -->|"Delegates to"| FactCheckerAgent
+    TaskMasterAgent -->|"Delegates to"| SynthesisAgent
+
+    %% Task Management Relationships
+    TaskMaster -->|"Uses"| TaskRouter
+    TaskRouter -->|"Coordinates"| WorkflowManager
+    WorkflowManager -->|"Executes"| TaskExecutor
+
+    %% Monitoring Relationships
+    MLflow -->|"Collects"| MetricsCollector
+    MLflow -->|"Tracks"| PerformanceTracker
+    MLflow -->|"Manages"| ExperimentTracker
+
+    %% Data Storage Relationships
+    MLflow -->|"Stores Data"| PostgresDB
+    MLflow -->|"Stores Artifacts"| ArtifactStore
+    CrewAI -->|"Reads"| KnowledgeBase
+
+    %% Configuration Relationships
+    TaskMaster -->|"Configures"| AgentConfig
+    TaskMaster -->|"Configures"| TaskConfig
+    MLflow -->|"Configures"| MLflowConfig
+
+    %% Metric Collection
+    MetricsCollector -->|"Logs to"| PostgresDB
+    PerformanceTracker -->|"Stores in"| PostgresDB
+    ExperimentTracker -->|"Records in"| PostgresDB
+
+    %% Knowledge Base Access
+    ResearchAgent -->|"Queries"| KnowledgeBase
+    WriterAgent -->|"Queries"| KnowledgeBase
+    DocumentorAgent -->|"Queries"| KnowledgeBase
+    FactCheckerAgent -->|"Queries"| KnowledgeBase
+    SynthesisAgent -->|"Queries"| KnowledgeBase
+```
+
 ## 📋 Requirements
 
 - Python >=3.10 <3.13

@@ -1,0 +1,82 @@
+# MLflow Configuration for AI Agents
+
+# Server Configuration
+server:
+  host: "127.0.0.1"
+  port: 5000
+  backend_store_uri: "${MLFLOW_POSTGRES_URI}"  # Using environment variable for database connection
+  default_artifact_root: "./mlflow-artifacts"
+  workers: 4
+  enable_swagger_ui: true
+
+# Tracking Configuration
+tracking:
+  experiment_name: "ai_agents"
+  run_name_prefix: "workflow_"
+  auto_log_metrics: true
+  auto_log_models: true
+
+# Task Performance Metrics
+metrics:
+  # Task metrics
+  task_execution_time: true
+  task_error_rate: true
+  task_resource_usage: true
+  task_completion_status: true
+  # Workflow metrics
+  workflow_throughput: true
+  workflow_completion_rate: true
+  workflow_efficiency_score: true
+  # Agent metrics
+  agent_decision_accuracy: true
+  agent_response_time: true
+
+# Reinforcement Learning Parameters
+rl_module:
+  model_registry_path: "./model-registry"
+  hyperparameters:
+    learning_rate: 0.001
+    discount_factor: 0.95
+    exploration_rate: 0.1
+  reward_weights:
+    execution_time: -0.3
+    error_rate: -0.5
+    resource_usage: -0.2
+    completion_status: 1.0
+    user_feedback: 0.8
+
+# Auto-Approval Configuration
+auto_approval:
+  enabled: true
+  initial_threshold: 0.75  # Confidence threshold for auto-approval
+  adaptive_adjustment: true  # Allow ML-based adjustment of threshold
+  min_threshold: 0.6
+  max_threshold: 0.95
+
+# Error Handling Configuration
+error_handling:
+  max_retries: 3
+  backoff_factor: 2  # Exponential backoff factor
+  jitter: 0.1  # Random jitter to prevent thundering herd
+  circuit_breaker:
+    failure_threshold: 5  # Number of failures before circuit opens
+    reset_timeout: 60  # Seconds before circuit half-opens
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_path: "./logs/mlflow_tracking.log"
+  rotation: "1 day"  # Log rotation period
+  retention: "7 days"  # Log retention period
+
+# Dashboard Configuration
+dashboard:
+  update_interval: 5  # Seconds between dashboard updates
+  default_view: "workflow_summary"
+  available_views:
+    - "workflow_summary"
+    - "task_performance"
+    - "agent_metrics"
+    - "error_analysis"
+    - "resource_usage"

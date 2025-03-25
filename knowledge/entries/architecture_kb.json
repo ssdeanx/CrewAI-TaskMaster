@@ -1,0 +1,175 @@
+{
+  "architecture_patterns": [
+    {
+      "id": "k-arch-001",
+      "content": "Event-driven architecture pattern enables loose coupling between task processors. Tasks communicate through event bus, allowing dynamic scaling and plugin-based extensions.",
+      "category": "technical",
+      "tags": ["architecture", "patterns", "event-driven"],
+      "confidence": 1.0,
+      "source": "system_design",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-arch-002",
+      "content": "Microkernel architecture allows core task management with plugin processors. New task types can be added through standardized plugin interface without modifying core system.",
+      "category": "technical",
+      "tags": ["architecture", "microkernel", "plugins"],
+      "confidence": 1.0,
+      "source": "system_design",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-arch-003",
+      "content": "Layered pattern separates task management into data, business logic, and presentation layers. Each layer is independently modifiable for different project requirements.",
+      "category": "technical",
+      "tags": ["architecture", "layered", "separation"],
+      "confidence": 1.0,
+      "source": "system_design",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-arch-004",
+      "content": "Plugin architecture with dynamic loading enables project-specific task processors, validation rules, and metrics collectors to be loaded at runtime.",
+      "category": "technical",
+      "tags": ["architecture", "plugins", "extensibility"],
+      "confidence": 1.0,
+      "source": "system_design",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-arch-005",
+      "content": "Sidecar pattern for specialized services like monitoring, logging, and security. Each project type can have custom sidecars.",
+      "category": "technical",
+      "tags": ["architecture", "sidecar", "monitoring"],
+      "confidence": 1.0,
+      "source": "system_design", 
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    }
+  ],
+  "project_adaptability": [
+    {
+      "id": "k-adapt-001",
+      "content": "Project-specific task processors implement TaskProcessor interface with validate(), execute(), and rollback() methods. Enables custom task handling per project type.",
+      "category": "technical",
+      "tags": ["adaptability", "interface", "custom"],
+      "confidence": 1.0,
+      "source": "implementation_guide",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-adapt-002",
+      "content": "Plugin registry allows dynamic registration of project-specific validation rules, approval workflows, and custom metrics collection. Uses strategy pattern for extensibility.",
+      "category": "technical",
+      "tags": ["plugins", "extensibility", "validation"],
+      "confidence": 1.0,
+      "source": "implementation_guide",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-adapt-003",
+      "content": "Language-specific task runners support multiple programming environments (Python, JavaScript, Java, etc.) through standardized execution interfaces.",
+      "category": "technical",
+      "tags": ["adaptability", "languages", "execution"],
+      "confidence": 1.0,
+      "source": "implementation_guide",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-adapt-004",
+      "content": "Framework detection and auto-configuration system identifies project type and loads appropriate plugins, validation rules, and metrics collectors.",
+      "category": "technical",
+      "tags": ["adaptability", "automation", "configuration"],
+      "confidence": 1.0,
+      "source": "implementation_guide",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    }
+  ],
+  "integration_patterns": [
+    {
+      "id": "k-integ-001",
+      "content": "Event sourcing pattern tracks all task state changes as events. Enables project-specific event handlers and custom analytics/reporting views.",
+      "category": "integrations",
+      "tags": ["events", "analytics", "state-management"],
+      "confidence": 1.0,
+      "source": "system_design",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-integ-002",
+      "content": "CQRS pattern separates task command processing from task querying. Allows optimization of read and write paths for different project requirements.",
+      "category": "integrations",
+      "tags": ["cqrs", "optimization", "scalability"],
+      "confidence": 1.0,
+      "source": "system_design",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-integ-003",
+      "content": "API Gateway pattern with project-specific endpoints and middleware. Supports REST, GraphQL, and gRPC protocols.",
+      "category": "integrations",
+      "tags": ["api", "gateway", "protocols"],
+      "confidence": 1.0,
+      "source": "system_design",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-integ-004",
+      "content": "Message broker integration enables asynchronous task processing and event-driven workflows across different project types.",
+      "category": "integrations",
+      "tags": ["messaging", "async", "events"],
+      "confidence": 1.0,
+      "source": "system_design",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    }
+  ],
+  "security_patterns": [
+    {
+      "id": "k-sec-001",
+      "content": "Role-based access control (RBAC) with project-specific permissions and approval workflows.",
+      "category": "security",
+      "tags": ["security", "rbac", "permissions"],
+      "confidence": 1.0,
+      "source": "security_guide",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-sec-002",
+      "content": "Secrets management integration with vault providers (HashiCorp Vault, AWS Secrets Manager) for project credentials.",
+      "category": "security",
+      "tags": ["security", "secrets", "credentials"],
+      "confidence": 1.0,
+      "source": "security_guide",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    }
+  ]
+}

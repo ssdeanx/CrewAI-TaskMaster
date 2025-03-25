@@ -1,0 +1,32 @@
+{
+  "task_management": [
+    {
+      "id": "k-workflow-001",
+      "content": "Task management workflow requires proper initialization of all components: MLflow tracking server, PostgreSQL database, and knowledge base. Always ensure environment variables are properly set before starting.",
+      "category": "system",
+      "tags": ["setup", "initialization", "workflow"],
+      "confidence": 1.0
+    },
+    {
+      "id": "k-mlflow-001",
+      "content": "MLflow tracking requires PostgreSQL connection string in MLFLOW_POSTGRES_URI environment variable. Default server runs on localhost:5000.",
+      "category": "technical",
+      "tags": ["mlflow", "configuration", "database"],
+      "confidence": 1.0
+    },
+    {
+      "id": "k-process-001",
+      "content": "Task execution follows sequential process: request_planning -> get_next_task -> mark_task_done -> approve_task_completion -> repeat until complete -> approve_request_completion",
+      "category": "workflows",
+      "tags": ["process", "execution", "workflow"],
+      "confidence": 1.0
+    },
+    {
+      "id": "k-error-001",
+      "content": "Error handling implements exponential backoff with jitter. Default settings: max_retries=3, backoff_factor=2, jitter=0.1",
+      "category": "technical",
+      "tags": ["error-handling", "configuration"],
+      "confidence": 1.0
+    }
+  ]
+}

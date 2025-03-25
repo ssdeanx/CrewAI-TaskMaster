@@ -1,0 +1,179 @@
+{
+  "tools": [
+    {
+      "id": "k-tool-001",
+      "content": "Task planning tools (request_planning, add_tasks_to_request) support dynamic task creation with priorities and due dates. Priority values: HIGH, MEDIUM, LOW.",
+      "category": "tools",
+      "tags": ["tools", "planning", "configuration"],
+      "confidence": 1.0,
+      "source": "system_docs",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-tool-002",
+      "content": "Task execution tools (mark_task_done, approve_task_completion) integrate with MLflow for metric tracking. Performance data feeds into the RL reward function.",
+      "category": "tools",
+      "tags": ["tools", "execution", "mlflow"],
+      "confidence": 1.0,
+      "source": "system_docs",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-tool-003",
+      "content": "Task monitoring tools (get_next_task, open_task_details) provide real-time status updates and support task prioritization based on RL policy.",
+      "category": "tools",
+      "tags": ["tools", "monitoring", "status"],
+      "confidence": 1.0,
+      "source": "system_docs",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    }
+  ],
+  "project_templates": [
+    {
+      "id": "k-template-001",
+      "content": "Web Development Template: Includes task patterns for frontend, backend, testing, and deployment phases. Supports React, Vue, Angular projects with customizable CI/CD steps.",
+      "category": "templates",
+      "tags": ["web", "development", "templates"],
+      "confidence": 1.0,
+      "source": "implementation_guide",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-template-002",
+      "content": "Data Science Template: Workflow patterns for data preprocessing, model training, evaluation, and deployment. Includes MLOps best practices and experiment tracking.",
+      "category": "templates",
+      "tags": ["data-science", "mlops", "templates"],
+      "confidence": 1.0,
+      "source": "implementation_guide",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-template-003",
+      "content": "Mobile App Template: Task patterns for iOS/Android development, including UI/UX, native features, testing, and app store deployment steps.",
+      "category": "templates",
+      "tags": ["mobile", "development", "templates"],
+      "confidence": 1.0,
+      "source": "implementation_guide",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    }
+  ],
+  "tool_integrations": [
+    {
+      "id": "k-integration-001",
+      "content": "MLflow integration uses PostgreSQL backend for metrics storage and ./mlflow-artifacts for artifact storage. Dashboards update every 5 seconds.",
+      "category": "integrations",
+      "tags": ["mlflow", "database", "monitoring"],
+      "confidence": 1.0,
+      "source": "integration_docs",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-integration-002",
+      "content": "GitOps integration enables automated workflow updates based on repository events. Supports GitHub Actions, GitLab CI, and custom CI/CD pipelines.",
+      "category": "integrations",
+      "tags": ["gitops", "ci-cd", "automation"],
+      "confidence": 1.0,
+      "source": "integration_docs",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-integration-003",
+      "content": "Jira/Trello integration synchronizes tasks and subtasks with external project management tools. Supports bidirectional status updates.",
+      "category": "integrations",
+      "tags": ["project-management", "sync", "external-tools"],
+      "confidence": 1.0,
+      "source": "integration_docs",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    }
+  ],
+  "integration": [
+    {
+      "id": "k-integration-001",
+      "content": "MLflow integration uses PostgreSQL backend for metrics storage and ./mlflow-artifacts for artifact storage. Dashboards update every 5 seconds.",
+      "category": "integrations",
+      "tags": ["mlflow", "database", "monitoring"],
+      "confidence": 1.0,
+      "source": "integration_docs",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-integration-002",
+      "content": "Error handling integrates with notification system for critical failures. Circuit breaker opens after 5 consecutive failures.",
+      "category": "error_handling",
+      "tags": ["errors", "notifications", "circuit-breaker"],
+      "confidence": 1.0,
+      "source": "system_docs",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    }
+  ],
+  "error_handling": [
+    {
+      "id": "k-error-001",
+      "content": "Circuit breaker pattern with exponential backoff retry strategy. Opens after 5 consecutive failures, half-opens after 60 seconds.",
+      "category": "error_handling",
+      "tags": ["resilience", "retry", "circuit-breaker"],
+      "confidence": 1.0,
+      "source": "system_docs",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-error-002",
+      "content": "Dead letter queue pattern for failed tasks with automated retry scheduling and manual intervention options.",
+      "category": "error_handling",
+      "tags": ["error", "retry", "queue"],
+      "confidence": 1.0,
+      "source": "system_docs",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    }
+  ],
+  "performance": [
+    {
+      "id": "k-perf-001",
+      "content": "Performance metrics tracked: task_execution_time, error_rate, resource_usage, completion_status, workflow_throughput, agent_response_time.",
+      "category": "performance",
+      "tags": ["metrics", "monitoring", "performance"],
+      "confidence": 1.0,
+      "source": "system_docs",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-perf-002",
+      "content": "Resource monitoring thresholds: CPU usage < 80%, memory usage < 70%, active tasks < 100, queue length < 50.",
+      "category": "performance",
+      "tags": ["thresholds", "resources", "monitoring"],
+      "confidence": 1.0,
+      "source": "system_config",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    }
+  ]
+}

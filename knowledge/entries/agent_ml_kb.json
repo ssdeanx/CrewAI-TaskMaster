@@ -1,0 +1,106 @@
+{
+  "agents_and_ml": [
+    {
+      "id": "k-agent-001",
+      "content": "TaskMaster agent uses reinforcement learning for dynamic task scheduling. Key metrics: execution_time, error_rate, resource_usage, and completion_status affect the reward function.",
+      "category": "agents",
+      "tags": ["agent", "rl", "metrics"],
+      "confidence": 1.0,
+      "source": "system_design",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-model-001",
+      "content": "Auto-approval threshold starts at 0.75 and adapts based on historical performance. Confidence scores below threshold require human approval.",
+      "category": "ml",
+      "tags": ["auto-approval", "threshold", "adaptation"],
+      "confidence": 1.0
+    },
+    {
+      "id": "k-model-002",
+      "content": "RL model hyperparameters: learning_rate=0.001, discount_factor=0.95, exploration_rate=0.1. Model artifacts stored in ./model-registry",
+      "category": "ml",
+      "tags": ["hyperparameters", "rl", "configuration"],
+      "confidence": 1.0
+    },
+    {
+      "id": "k-reward-001",
+      "content": "Reward weights: execution_time=-0.3, error_rate=-0.5, resource_usage=-0.2, completion_status=1.0, user_feedback=0.8",
+      "category": "ml",
+      "tags": ["rewards", "weights", "rl"],
+      "confidence": 1.0
+    },
+    {
+      "id": "k-rl-001",
+      "content": "Reinforcement learning configuration: learning_rate=0.001, discount_factor=0.95, exploration_rate=0.1. Models stored in ./model-registry with MLflow tracking.",
+      "category": "ml_models",
+      "tags": ["rl", "configuration", "hyperparameters"],
+      "confidence": 1.0,
+      "source": "ml_config",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-approval-001",
+      "content": "Auto-approval mechanism uses adaptive thresholds starting at 0.75. Threshold adjusts based on historical performance and human feedback.",
+      "category": "ml_models",
+      "tags": ["auto-approval", "thresholds", "adaptation"],
+      "confidence": 1.0,
+      "source": "system_config",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-context-001",
+      "content": "Context monitoring tracks system_load, memory_usage, active_tasks, and queue_length to adjust task scheduling priorities.",
+      "category": "performance",
+      "tags": ["monitoring", "metrics", "scheduling"],
+      "confidence": 1.0,
+      "source": "system_design",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    }
+  ],
+  "workflow_patterns": [
+    {
+      "id": "k-pattern-001",
+      "content": "Task branching uses confidence scores to determine auto-approval eligibility. Scores below threshold require human review.",
+      "category": "workflows",
+      "tags": ["patterns", "approval", "automation"],
+      "confidence": 1.0,
+      "source": "system_design",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    },
+    {
+      "id": "k-pattern-002",
+      "content": "Asynchronous tasks implement notification callbacks through notify_task_event tool with COMPLETED or FAILED status.",
+      "category": "workflows",
+      "tags": ["async", "notifications", "events"],
+      "confidence": 1.0,
+      "source": "system_design",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    }
+  ],
+  "security_config": [
+    {
+      "id": "k-security-001",
+      "content": "API keys and sensitive configurations stored in environment variables. Database credentials never exposed in code.",
+      "category": "security",
+      "tags": ["security", "configuration", "credentials"],
+      "confidence": 1.0,
+      "source": "security_policy",
+      "created_at": "2024-03-25T00:00:00Z",
+      "updated_at": "2024-03-25T00:00:00Z",
+      "version": 1
+    }
+  ]
+}

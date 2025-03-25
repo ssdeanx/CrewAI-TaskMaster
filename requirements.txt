@@ -1,0 +1,17 @@
+crewai>=0.14.0
+langchain>=0.1.0
+mlflow>=2.10.0
+pydantic>=2.5.0
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+pandas>=2.0.0
+psycopg2-binary>=2.9.9
+requests>=2.31.0
+fuzzywuzzy>=0.18.0
+python-Levenshtein>=0.23.0
+dataclasses-json>=0.6.3
+sqlalchemy>=2.0.0
+tree-sitter>=0.20.4
+aiohttp>=3.9.0
+openai>=1.0.0
+tenacity>=8.2.0

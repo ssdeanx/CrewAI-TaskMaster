@@ -1,0 +1,100 @@
+# Research Paper Generation Tasks
+# This file defines the sequential tasks required to produce high-quality academic research papers
+
+topic_analysis:
+  description: "Analyze the research topic to identify key components, existing literature gaps, and potential research questions"
+  expected_output: "A detailed topic analysis report containing: 1) Main research components and sub-topics, 2) Identified gaps in existing literature, 3) 3-5 potential research questions ranked by significance, 4) Recommended methodological approaches, 5) List of key domains and disciplines relevant to the topic"
+  agent: "researcher"
+  context: []
+  async: false
+
+literature_search:
+  description: "Conduct a comprehensive literature search to identify key sources, seminal works, and recent developments in the research area"
+  expected_output: "A structured literature report containing: 1) 10-15 key sources with full citations, 2) Summary of major theoretical frameworks, 3) Historical development of the research area, 4) Current state of research with identification of leading scholars and institutions, 5) Emerging trends and controversies"
+  agent: "researcher"
+  context: ["topic_analysis"]
+  async: false
+
+research_synthesis:
+  description: "Synthesize research findings to identify patterns, contradictions, and integrative frameworks across different sources and perspectives"
+  expected_output: "A synthesis document containing: 1) Identified patterns and themes across sources, 2) Major theoretical perspectives with comparison, 3) Contradictions or debates in the literature, 4) Integrative framework that connects key concepts, 5) Visualization of relationships between major concepts"
+  agent: "synthesis_expert"
+  context: ["literature_search"]
+  async: false
+
+outline_creation:
+  description: "Develop a comprehensive outline for the research paper with main sections, subsections, and logical flow of arguments"
+  expected_output: "A detailed outline document containing: 1) Paper title and abstract draft, 2) Main sections with descriptive headings, 3) Subsections with key points to address, 4) Logical sequence and transitions between sections, 5) Allocation of word count/space to each section"
+  agent: "writer"
+  context: ["topic_analysis", "research_synthesis"]
+  async: false
+
+introduction_draft:
+  description: "Write a compelling introduction that establishes the research context, problem statement, purpose, and significance of the study"
+  expected_output: "A complete introduction section (800-1200 words) containing: 1) Research context and background, 2) Clear problem statement, 3) Purpose of the research, 4) Significance of the study, 5) Overview of paper structure"
+  agent: "writer"
+  context: ["outline_creation", "research_synthesis"]
+  async: false
+
+methodology_section:
+  description: "Develop the methodology section detailing research approach, data collection methods, analysis techniques, and limitations"
+  expected_output: "A comprehensive methodology section (1000-1500 words) containing: 1) Research philosophy and approach justification, 2) Data collection methods with protocols, 3) Analysis techniques and tools, 4) Ethical considerations, 5) Methodological limitations and mitigation strategies"
+  agent: "writer"
+  context: ["outline_creation", "topic_analysis"]
+  async: false
+
+findings_section:
+  description: "Present research findings in a structured, clear manner with appropriate evidence, data visualization, and analysis"
+  expected_output: "A detailed findings section (1500-2500 words) containing: 1) Organized presentation of key findings, 2) Supporting evidence and data, 3) Statistical analysis or qualitative insights, 4) Visual representations of data (tables, figures, charts), 5) Patterns and relationships in findings"
+  agent: "writer"
+  context: ["methodology_section", "research_synthesis"]
+  async: false
+
+discussion_section:
+  description: "Interpret findings in relation to existing literature, address research questions, and discuss implications and limitations"
+  expected_output: "A comprehensive discussion section (1500-2500 words) containing: 1) Interpretation of key findings, 2) Connection to existing literature, 3) Addressing of research questions, 4) Theoretical and practical implications, 5) Study limitations and future research directions"
+  agent: "writer"
+  context: ["findings_section", "research_synthesis", "literature_search"]
+  async: false
+
+conclusion_draft:
+  description: "Write a concise conclusion that summarizes key findings, restates significance, and offers closing thoughts"
+  expected_output: "A polished conclusion section (500-800 words) containing: 1) Summary of key findings, 2) Restatement of significance, 3) Practical or theoretical contributions, 4) Future research recommendations, 5) Compelling closing statement"
+  agent: "writer"
+  context: ["discussion_section", "introduction_draft"]
+  async: false
+
+reference_compilation:
+  description: "Compile and format all references according to the required citation style (APA, MLA, Chicago, etc.)"
+  expected_output: "A complete references section with: 1) All in-text citations properly documented, 2) References formatted according to specified style guide, 3) Verification of reference accuracy and completeness, 4) Proper formatting of different source types (journals, books, websites, etc.), 5) Alphabetical or chronological ordering as appropriate"
+  agent: "documentor"
+  context: ["literature_search", "conclusion_draft"]
+  async: false
+
+fact_verification:
+  description: "Verify all factual claims, statistics, quotations, and ensure methodological soundness"
+  expected_output: "A verification report containing: 1) List of verified facts and statistics with sources, 2) Identified factual discrepancies and corrections, 3) Verification of quotation accuracy, 4) Assessment of methodological soundness, 5) Recommendations for areas needing additional support or clarification"
+  agent: "fact_checker"
+  context: ["findings_section", "discussion_section", "introduction_draft"]
+  async: false
+
+abstract_creation:
+  description: "Create a concise, compelling abstract that summarizes the research problem, methods, findings, and implications"
+  expected_output: "A polished abstract (200-300 words) containing: 1) Research problem and context, 2) Methodology overview, 3) Key findings, 4) Main implications or conclusions, 5) Keywords for indexing"
+  agent: "writer"
+  context: ["introduction_draft", "conclusion_draft", "findings_section"]
+  async: false
+
+formatting_and_structure:
+  description: "Format the complete paper according to academic standards with proper headings, pagination, tables, figures, and appendices"
+  expected_output: "A fully formatted research paper containing: 1) Proper title page with author details, 2) Consistent heading hierarchy, 3) Correctly labeled tables and figures, 4) Appropriate pagination, 5) Formatted appendices and supplementary materials if applicable"
+  agent: "documentor"
+  context: ["reference_compilation", "abstract_creation"]
+  async: false
+
+final_review:
+  description: "Conduct a comprehensive review of the entire paper for quality, cohesion, argument strength, and academic rigor"
+  expected_output: "A final review report containing: 1) Assessment of overall quality and cohesion, 2) Evaluation of argument strength and logical flow, 3) Verification of academic rigor and contribution, 4) Identification of any remaining weaknesses or areas for improvement, 5) Final paper with all revisions implemented"
+  agent: "fact_checker"
+  context: ["formatting_and_structure"]
+  async: false

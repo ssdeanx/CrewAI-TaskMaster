@@ -1,0 +1,51 @@
+general:
+  description: "General knowledge entries"
+  tags: ["general", "misc"]
+
+system:
+  description: "System-level knowledge and configurations"
+  tags: ["system", "config", "setup", "initialization"]
+
+agents:
+  description: "Agent behaviors and configurations"
+  tags: ["agents", "behavior", "roles", "automation"]
+
+workflows:
+  description: "Workflow patterns and execution processes"
+  tags: ["workflow", "process", "execution", "automation"]
+
+tools:
+  description: "Tool documentation and usage patterns"
+  tags: ["tools", "utilities", "integration", "api"]
+
+domain:
+  description: "Domain-specific knowledge"
+  tags: ["domain", "business", "context"]
+
+technical:
+  description: "Technical documentation and implementation details"
+  tags: ["technical", "code", "architecture"]
+
+ml:
+  description: "Machine learning and AI-related knowledge"
+  tags: ["ml", "ai", "models", "training"]
+
+ml_models:
+  description: "Machine learning models and configurations"
+  tags: ["ml", "models", "training", "hyperparameters"]
+
+error_handling:
+  description: "Error handling and recovery strategies"
+  tags: ["errors", "recovery", "retry", "fallback"]
+
+performance:
+  description: "Performance optimization and metrics"
+  tags: ["performance", "metrics", "optimization", "monitoring"]
+
+integrations:
+  description: "External system integrations"
+  tags: ["integration", "external", "api", "connection"]
+
+security:
+  description: "Security configurations and best practices"
+  tags: ["security", "authentication", "authorization", "encryption"]
